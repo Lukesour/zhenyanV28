@@ -44,7 +44,19 @@ apiClient.interceptors.response.use(
       }
     } else if (error.request) {
       // 请求已发出但没有收到响应
-      error.userMessage = '网络连接失败，请检查网络设置';
+      console.error('Network error details:', {
+        url: error.config?.url,
+        baseURL: error.config?.baseURL,
+        method: error.config?.method,
+        timeout: error.config?.timeout
+      });
+      
+      // 检查是否是超时错误
+      if (error.code === 'ECONNABORTED' || error.message?.includes('timeout')) {
+        error.userMessage = '请求超时，AI分析需要较长时间，请稍后重试或联系客服';
+      } else {
+        error.userMessage = `网络连接失败 (${error.config?.baseURL || 'unknown'})，请检查网络设置或联系客服`;
+      }
     } else {
       // 其他错误
       error.userMessage = '分析失败，请稍后重试';

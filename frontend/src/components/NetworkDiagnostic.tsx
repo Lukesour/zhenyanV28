@@ -91,7 +91,14 @@ const NetworkDiagnostic: React.FC<NetworkDiagnosticProps> = ({ onClose }) => {
                   <div>
                     <p>✅ 连接成功</p>
                     <p>响应时间: {testResult.responseTime}ms</p>
-                    <p>API 状态: {testResult.data?.status || 'unknown'}</p>
+                    <p>API 状态: 正常</p>
+                    <p>服务详情:</p>
+                    <ul>
+                      <li>应用服务: {testResult.data?.app?.ok ? '✅ 在线' : '❌ 离线'}</li>
+                      <li>模型可用: {testResult.data?.model_available?.ok ? '✅ 已配置' : '❌ 未配置'}</li>
+                      <li>数据加载: {testResult.data?.similarity_data_loaded?.ok ? '✅ 已加载' : '❌ 未加载'}</li>
+                      <li>配置状态: {testResult.data?.config_ok?.ok ? '✅ 正常' : '❌ 异常'}</li>
+                    </ul>
                   </div>
                 ) : (
                   <div>

@@ -69,6 +69,11 @@ const ErrorDisplay: React.FC<ErrorDisplayProps> = ({
         <Text type="secondary">
           如果问题持续存在，请联系客服获得帮助
         </Text>
+        <div style={{ marginTop: 10 }}>
+          <Text type="secondary" style={{ fontSize: '12px' }}>
+            💡 提示：AI分析通常需要3-5分钟，请耐心等待
+          </Text>
+        </div>
       </div>
     </div>
   );

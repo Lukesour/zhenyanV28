@@ -30,6 +30,10 @@ class Settings:
     SIMILAR_CASES_ANALYSIS_LIMIT = int(os.getenv("SIMILAR_CASES_ANALYSIS_LIMIT", "10"))
     SIMILAR_CASES_API_LIMIT = int(os.getenv("SIMILAR_CASES_API_LIMIT", "200"))
     
+    # Timeout Configuration
+    REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "300"))  # 5 minutes
+    ANALYSIS_TIMEOUT = int(os.getenv("ANALYSIS_TIMEOUT", "600"))  # 10 minutes
+    
     @property
     def source_database_url(self):
         return f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME_SOURCE}"
