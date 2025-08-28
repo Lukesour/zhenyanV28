@@ -31,7 +31,7 @@ apiClient.interceptors.response.use(
     
     // 标准化错误信息（后端已统一为标准化错误对象）
     if (error.response) {
-      const { status, data } = error.response;
+      const { data } = error.response;
       const code = data?.code as string | undefined;
       const message = (data?.message as string | undefined) || '请求失败，请稍后重试';
       const retryable = (data?.retryable as boolean | undefined) ?? undefined;

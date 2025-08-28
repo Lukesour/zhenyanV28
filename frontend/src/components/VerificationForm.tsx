@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Card, Row, Col, message, Typography, Space } from 'antd';
-import { ArrowLeftOutlined, WechatOutlined, CheckCircleOutlined } from '@ant-design/icons';
+import { WechatOutlined, CheckCircleOutlined } from '@ant-design/icons';
 import './VerificationForm.css';
 
 const { Title, Text } = Typography;
@@ -74,10 +74,10 @@ const VerificationForm: React.FC<VerificationFormProps> = ({
     }, 1000);
   };
 
-  // 处理返回表单
-  const handleBackToForm = () => {
-    onBackToForm();
-  };
+  // 处理返回表单（暂时未使用）
+  // const handleBackToForm = () => {
+  //   onBackToForm();
+  // };
 
   return (
     <div className="verification-container">

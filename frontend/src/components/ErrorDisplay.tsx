@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Button, Space, Typography, Collapse } from 'antd';
+import { Alert, Button, Space, Typography } from 'antd';
 import { ExclamationCircleOutlined, ReloadOutlined, WifiOutlined } from '@ant-design/icons';
 import NetworkDiagnostic from './NetworkDiagnostic';
 

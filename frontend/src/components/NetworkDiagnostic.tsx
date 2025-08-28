@@ -4,7 +4,7 @@ import { WifiOutlined, CheckCircleOutlined, CloseCircleOutlined } from '@ant-des
 import { apiService } from '../services/api';
 import { API_BASE_URL } from '../config';
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 interface NetworkDiagnosticProps {
   onClose?: () => void;
